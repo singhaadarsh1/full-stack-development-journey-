@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <style>
+        div {
+            margin-bottom: 15px;
+        }
+
+        /* Adds 15px space between each div */
+    </style>
+</head>
+
+<body>
+    <form action="form.php" method="POST" enctype="multipart/form-data">
+        <div>
+            <label for="username">username </label>
+            <input type="text" id="username" placeholder="spongebob" minlength="5" maxlength="12">
+        </div>
+
+        <div>
+            <label for="Password">password </label>
+            <input type="password" id="password" placeholder="Aaa@123" minlength="6" maxlength="6">
+        </div>
+
+        <div>
+            <label for="email"> E-mail </label>
+            <input type="email" id="email" placeholder="shhbdq@gmail.com">
+        </div>
+        <div>
+            <label for="phone"> phone no. </label>
+            <input type="tel" id="phone" placeholder="+91-831-777-8888" pattern="+91-[0-9]{3}-[0-9]{3}-[0-9]{4}">
+        </div>
+        <div>
+            <label for="bday"> Birthdate </label>
+            <input type="date" id="bday">
+        </div>
+        <div>
+            <label for="quantity"> quantity</label>
+            <input type="number" id="quantity" min="1" max="99" value="1">
+        </div>
+        <div>
+            <label for="title"> title</label>
+            <label for="Mr"> Mr</label>
+            <input type="radio" id="Mr" value="Mr." name="title">
+
+            <label for="Mrs"> Mrs</label>
+            <input type="radio" id="Mrs" value="Mrs." name="title">
+
+            <label for="phd."> phd</label>
+            <input type="radio" id="phd." value="Mrs." name="title">
+        </div>
+        <div>
+            <label for="payment"> payment</label>
+            <select id="payment">
+                <option value="visa">visa</option>
+                <option value="mastercard">mastercard</option>
+                <option value="upi">upi</option>
+                <option value="cash">cash</option>
+            </select>
+        </div>
+        <div>
+            <label for="subscribe"> subscribe</label>
+            <input type="checkbox"  id="subscribe">      
+        </div>
+        <div>
+            <label for="comment"> comment</label>
+            <textarea id="comment " rows="4"  cols="30" ></textarea>     
+        </div>
+        <div>
+            <label for="file"> choose file</label>
+            <input type="file"  id="file" accept="image/png,image/jpeg,video/mp4">
+
+        </div>
+        <div>
+            <input type="reset">
+        </div>
+        <div>
+            <input type="submit">
+        </div>
+
+
+    </form>
+
+</body>
+
+</html>
