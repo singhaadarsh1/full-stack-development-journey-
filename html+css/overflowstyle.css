@@ -1,0 +1,42 @@
+div {
+  border: 2px solid black;
+  height: 38px;
+  overflow: scroll;
+  /*overflow controls what happens when content becomes bigger than its container. ✅
+
+Types of overflow
+overflow: visible;
+
+Default → content spills outside the box.
+
+overflow: hidden;
+
+Extra content gets clipped/hidden.
+
+overflow: scroll;
+
+Always shows scrollbars.
+
+overflow: auto;
+
+Scrollbar appears only when needed.
+
+Direction-specific overflow
+overflow-x: scroll;
+
+Horizontal overflow control.
+
+overflow-y: scroll;
+
+Vertical overflow control.
+
+Example
+.box{
+    width:200px;
+    height:200px;
+
+    overflow:auto;
+}
+
+If content exceeds box size, scrolling appears automatically.*/
+}
