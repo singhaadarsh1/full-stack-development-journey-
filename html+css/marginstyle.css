@@ -1,0 +1,37 @@
+body{
+    margin:0px;
+}
+.box{
+    border:5px solid;
+    
+    font-size:5em;
+    width:200px;
+    height:200px;
+    margin:50px;/*2no box k element k charo trf 50px ka margin ho jayegaa*/
+    padding:20px;
+    box-sizing:border-box;
+    
+}
+#box1{
+    background-color:rgb(255, 106, 0);
+    box-shadow:6px 6px 18px rgb(0, 0, 0,0.5);
+    /* aise element kcharotrf 50px ka margin ho jayegaa
+    margin:50px;*/
+    margin-bottom:50px;
+    margin-top:50px;
+    margin-left:50px;
+    margin-right:50px;
+    /*left ka sara apace le lega aur ekdm right me shift ho jayega
+    margin-left:auto*/
+    /*right ka sara space le lega aur ekdm right me shift ho jayega
+    margin-right:auto*/
+
+
+
+}
+#box2{
+    background-color:rgb(88, 88, 213);
+    box-shadow:6px 6px 18px rgb(0, 0,0, 0.5);
+    
+    
+}
