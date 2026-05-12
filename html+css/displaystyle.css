@@ -1,0 +1,61 @@
+#div1 {
+  background-color: orange;
+  height: 100px;
+  width: 100px;
+  display: block;
+}
+#span1 {
+  background-color: skyblue;
+  height: 100px;
+  width: 100px;
+  display: block;
+}
+#div2 {
+  background-color: orange;
+  height: 100px;
+  width: 100px;
+  display: inline;
+}
+#span2 {
+  background-color: skyblue;
+  height: 100px;
+  width: 100px;
+  display: inline;
+}
+#div3 {
+  background-color: orange;
+  height: 100px;
+  width: 100px;
+  display: inline-block;
+}
+#span3 {
+  background-color: skyblue;
+  height: 100px;
+  width: 100px;
+  display: inline-block;
+}
+#div4 {
+  background-color: orange;
+  height: 100px;
+  width: 100px;
+  display: none;
+}
+#span4 {
+  background-color: skyblue;
+  height: 100px;
+  width: 100px;
+  display: none;
+}
+#div5 {
+  background-color: orange;
+  height: 100px;
+  width: 100px;
+  display: inline-block;
+  visibility: hidden; /*it hides the content but space will be occupied but if we display none the it has no meaning*/
+}
+#span5 {
+  background-color: skyblue;
+  height: 100px;
+  width: 100px;
+  display: inline-block;
+}
