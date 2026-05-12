@@ -1,0 +1,18 @@
+/*@font-face is used too add custom fonts by downloading own .ttf,.woff,.otf font file*/
+@font-face{
+    src: url(fonts/Roboto_Condensed-Light.ttf);
+    font-family:Roboto-Light;
+}
+@font-face{
+    src: url(fonts/Roboto-VariableFont_wdth,wght.ttf);
+    font-family:Roboto;
+}
+h2{
+    font-family:Roboto-Light,"verdana","arial";
+}
+p1{
+    font-family:Roboto,"luciada console","courier new";
+    font-size:1em;
+    font-weight:bold;
+    font-style:italic;
+}

@@ -1,0 +1,11 @@
+h1{
+    font-family:arial,verdana;
+}
+p{
+    font-family:"courier new";
+    font-size:1em;
+    /*we can write size in pixel too like 10px*/
+    font-weight:bold;
+    font-style:normal;
+    
+}
