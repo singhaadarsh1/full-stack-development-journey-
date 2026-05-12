@@ -1,0 +1,12 @@
+h1{
+    /*we can write border weidth, color,style separately too*/
+    border:3px outset rgb(59, 142, 131);
+    border-radius:15px;
+}
+p{
+    border-bottom:3px solid rgb(188, 26, 26);
+    border-top:3px dotted rgb(29, 29, 205);
+    border-left:3px inset rgb(19, 19, 19);
+    border-right:3px outset rgb(236, 236, 22);
+    border-radius:15px;
+}
