@@ -1,0 +1,36 @@
+#box1{
+    width: 200px;
+    height: 200px;
+    background-color:skyblue;
+    position:relative;
+   top:0px;
+    left:560px;
+    
+}
+#box2{
+    width: 100px;
+    height: 100px;
+    background-color:red;
+    position:fixed;
+    right:0px;
+    bottom:0px;
+}
+#box3{
+    width: 100px;
+    height: 100px;
+    background-color:rgb(0, 0, 0);
+    position:fixed;
+    top:100px;
+    left:100px;
+    
+}
+#box4{
+    width: 50px;
+    height: 50px;
+    background-color:rgb(0, 255, 13);
+    position:absolute;
+    top:25px;
+    left:25px;
+    
+}
+
