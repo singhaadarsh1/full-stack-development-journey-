@@ -1,0 +1,15 @@
+#main {
+  border: 2px solid;
+}
+#main p {
+  background-color: lightblue; /* descendant */
+}
+#main > p {
+  background-color: lightpink; /* child */
+}
+#main ~ p {
+  background-color: lightgreen; /* general sibling */
+}
+#main + p {
+  background-color: violet; /* adjacent sibling */
+}
