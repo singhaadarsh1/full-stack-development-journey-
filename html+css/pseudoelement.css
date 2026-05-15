@@ -1,0 +1,23 @@
+h1::first-letter{
+    font-size:2em;
+    font-style :italic;
+}
+p::first-line{
+    background-color:yellow
+}
+p::selection{
+    color:green;
+    background-color:grey;
+}
+#apple::after{
+    content:"🍎"
+}
+#banana::after{
+    content:"🍌"
+}#mango::after{
+    content:"🥭"
+}#fruit li:marker{
+    content:"☑️";
+    color : yellow;
+}
+
