@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+}
+.container{
+  background-color:grey;
+  height:100vh;
+  
+  
+}
+.box {
+  background-color:rgb(255, 255, 255);
+  border: 2px solid;
+  padding: 25px;
+  
+  width: 25%;
+  float: left;
+  margin-bottom: 20px;
+  text-align:center;
+  max-height:25%
+  max-width:25%
+  
+  
+
+  /*box-sizing:border-box; ← Keeps width at 50% including border */
+}
+.box1 {
+  background-color:red;
+  border: 2px solid;
+  float: left;
+  width: 50%;
+  text-align: center;
+  min-height:25%;
+  overflow:auto;
+  
+  
+}
