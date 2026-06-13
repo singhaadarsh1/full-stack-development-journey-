@@ -1,0 +1,21 @@
+.gallery{
+    display:inline-block;
+    border:1px solid hsl(0, 0%, 61%);
+    margin:5px;
+    width:200px;
+     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+   
+    
+
+}
+.gallery .description{
+    padding:10px;
+    text-align:center;
+}
+.gallery:hover{
+    border:1px solid hsl(0, 0%, 20%);
+}
+.gallery img{
+    width:100%;
+    height:auto;
+}
