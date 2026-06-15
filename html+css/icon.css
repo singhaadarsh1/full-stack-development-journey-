@@ -1,0 +1,20 @@
+.icons{
+    text-align:center;
+}
+.fa-sharp.fa-solid.fa-house.fa-5x{
+    color:hsl(0, 3%, 65%);
+}
+.fa-brands.fa-twitter.fa-5x{
+    color:skyblue;
+}
+.fa-brands.fa-youtube.fa-5x{
+    color:red
+
+}
+.fa-brands.fa-tiktok.fa-5x{
+color:black;
+}
+.icons{
+    text-decoration:none;
+    margin-right:none;
+}
