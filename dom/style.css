@@ -1,0 +1,131 @@
+/* Classic Retro Todo */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 50px 20px;
+  min-height: 100vh;
+
+  background: #f4efe6;
+  color: #332b25;
+
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+/* Title */
+
+h1 {
+  width: 600px;
+  max-width: 100%;
+  margin: 0 auto 30px;
+
+  padding: 15px;
+
+  text-align: center;
+
+  font-size: 38px;
+  font-weight: normal;
+  letter-spacing: 1px;
+
+  color: #332b25;
+
+  border-bottom: 3px solid #332b25;
+}
+
+/* Todo container */
+
+#todos {
+  width: 600px;
+  max-width: 100%;
+  margin: 0 auto 25px;
+}
+
+/* Individual todo */
+
+#todos > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 12px;
+  padding: 12px 15px;
+
+  background: #fffdf8;
+
+  border: 1px solid #c9bba8;
+  border-radius: 3px;
+
+  box-shadow: 2px 2px 0 #c9bba8;
+}
+
+/* Todo text */
+
+h4 {
+  margin: 0;
+
+  font-size: 21px;
+  font-weight: normal;
+}
+
+/* Buttons */
+
+button {
+  padding: 7px 13px;
+
+  background: #d47b45;
+  color: white;
+
+  border: 1px solid #a95c32;
+  border-radius: 3px;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 15px;
+
+  cursor: pointer;
+}
+
+/* Button hover */
+
+button:hover {
+  background: #b96335;
+}
+
+/* Add todo section */
+
+body > div:last-of-type {
+  width: 600px;
+  max-width: 100%;
+  margin: 0 auto;
+
+  display: flex;
+  gap: 10px;
+}
+
+/* Input */
+
+input {
+  flex: 1;
+
+  padding: 10px 12px;
+
+  background: #fffdf8;
+  color: #332b25;
+
+  border: 1px solid #a99b88;
+  border-radius: 3px;
+
+  outline: none;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+}
+
+/* Input focus */
+
+input:focus {
+  border-color: #d47b45;
+  box-shadow: 0 0 0 2px rgba(212, 123, 69, 0.15);
+}
