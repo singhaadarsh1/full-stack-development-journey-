@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>statederivedfrontend</title>
+    <link href="todostyle.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <input type="text" placeholder="Enter your todo" />
+
+    <button onclick="addTodo()">Add Todo!</button>
+
+    <div id="todos"></div>
+
+    <script>
+      let todos = [];
+
+      // Add a new todo
+      function addTodo() {
+        const input = document.querySelector("input");
+        const title = input.value.trim();
+
+        if (title === "") return;
+
+        todos.push({
+          title: title,
+        });
+
+        input.value = "";
+        render();
+      }
+
+      // Delete a todo
+      function deleteTodo(index) {
+        // Remove 1 item from the array at this index
+        todos.splice(index, 1);
+
+        // Update the UI
+        render();
+      }
+
+      // Edit a todo
+      function editTodo(index) {
+        // Ask the user for the new title
+        const newTitle = prompt("Edit your todo:", todos[index].title);
+
+        // Update the todo if user didn't cancel
+        if (newTitle !== null) {
+          todos[index].title = newTitle;
+        }
+
+        // Update the UI
+        render();
+      }
+
+      // Render the todos on the webpage
+      function render() {
+        const container = document.querySelector("#todos");
+
+        // Clear the existing UI
+        container.innerHTML = "";
+
+        // Go through every todo
+        for (let i = 0; i < todos.length; i++) {
+          // Create a div for this todo
+          const div = document.createElement("div");
+
+          // Show the todo title
+          div.innerHTML = `
+  <span class="todo-number">${i + 1}.</span>
+  <span class="todo-title">${todos[i].title}</span>
+`;
+
+          // =========================
+          // EDIT BUTTON
+          // =========================
+
+          const editButton = document.createElement("button");
+
+          editButton.innerHTML = "Edit";
+
+          editButton.onclick = function () {
+            editTodo(i);
+          };
+
+          // =========================
+          // DELETE BUTTON
+          // =========================
+
+          const deleteButton = document.createElement("button");
+
+          deleteButton.innerHTML = "Delete";
+
+          deleteButton.onclick = function () {
+            deleteTodo(i);
+          };
+
+          // Add both buttons to the todo div
+          div.appendChild(editButton);
+          div.appendChild(deleteButton);
+
+          // Add the todo div to the container
+          container.appendChild(div);
+        }
+      }
+    </script>
+  </body>
+</html>
