@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axios</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</head>
+<body>
+    <div id="posts"></div>
+    <button onclick="fetchposts()">Click me</button>
+    <script>
+        async function fetchposts(){
+            alert("Button clicked daddy");
+            const res=await axios.get("https://jsonplaceholder.typicode.com/posts/1");
+            document.getElementById("posts").innerHTML=`<div>ID:${(res.data.id)}</div>
+            <div>TITLE:${(res.data.title)}</div>
+            <div>BODY:${(res.data.body)}</div>
+            `
+        }
+    </script>
+    
+</body>
+</html>
