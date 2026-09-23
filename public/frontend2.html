@@ -1,0 +1,297 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>Authentication Website</title>
+
+  <!-- Axios -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js"></script>
+
+</head>
+
+
+<script>
+
+  // =====================================================
+  // CHECK LOGIN STATUS
+  // =====================================================
+
+  async function checkLoginStatus() {
+
+    // Get token from browser localStorage
+    const token = localStorage.getItem("token");
+
+    // If token exists
+    if (token) {
+
+      // Ask backend for current user information
+      await getUserInformation();
+
+      // Show logged-in section
+      showUserSection();
+
+    }
+
+    // If token does not exist
+    else {
+
+      // Show signup/signin section
+      showAuthSection();
+
+    }
+  }
+
+
+  // =====================================================
+  // SHOW SIGNUP + SIGNIN
+  // =====================================================
+
+  function showAuthSection() {
+
+    // Show authentication section
+    document.getElementById("auth-section").style.display = "block";
+
+    // Hide user section
+    document.getElementById("user-section").style.display = "none";
+  }
+
+
+  // =====================================================
+  // SHOW USER INFORMATION + LOGOUT
+  // =====================================================
+
+  function showUserSection() {
+
+    // Hide authentication section
+    document.getElementById("auth-section").style.display = "none";
+
+    // Show user section
+    document.getElementById("user-section").style.display = "block";
+  }
+
+
+  // =====================================================
+  // SIGNUP
+  // =====================================================
+
+  async function signup() {
+
+    // Get username from signup input
+    const username =
+      document.getElementById("signup-username").value;
+
+    // Get password from signup input
+    const password =
+      document.getElementById("signup-password").value;
+
+
+    // Send signup request to backend
+    const response = await axios.post(
+      "http://localhost:3000/signup",
+      {
+        username: username,
+        password: password
+      }
+    );
+
+
+    // Show message
+    alert("Signed up successfully");
+  }
+
+
+  // =====================================================
+  // SIGNIN
+  // =====================================================
+
+  async function signin() {
+
+    // Get username from signin input
+    const username =
+      document.getElementById("signin-username").value;
+
+    // Get password from signin input
+    const password =
+      document.getElementById("signin-password").value;
+
+
+    // Send signin request to backend
+    const response = await axios.post(
+      "http://localhost:3000/signin",
+      {
+        username: username,
+        password: password
+      }
+    );
+
+
+    // Get JWT from backend response
+    const token = response.data.token;
+
+
+    // Store JWT in browser localStorage
+    localStorage.setItem("token", token);
+
+
+    alert("Signed in successfully");
+
+
+    // Check login status again
+    // This will now find the token
+    checkLoginStatus();
+  }
+
+
+  // =====================================================
+  // GET USER INFORMATION
+  // =====================================================
+
+  async function getUserInformation() {
+
+    // Get JWT from localStorage
+    const token =
+      localStorage.getItem("token");
+
+
+    // Send JWT to backend
+    const response = await axios.get(
+      "http://localhost:3000/me",
+      {
+        headers: {
+          Authorization: token
+        }
+      }
+    );
+
+
+    // Display username on the webpage
+    document.getElementById("information").innerHTML =
+      response.data.username;
+  }
+
+
+  // =====================================================
+  // LOGOUT
+  // =====================================================
+
+  function logout() {
+
+    // Remove JWT from browser
+    localStorage.removeItem("token");
+
+
+    // Show signup/signin again
+    showAuthSection();
+  }
+
+
+  // =====================================================
+  // RUN WHEN PAGE LOADS
+  // =====================================================
+
+  checkLoginStatus();
+
+</script>
+
+
+<body>
+
+
+  <!-- =================================================
+       AUTHENTICATION SECTION
+       SIGNUP + SIGNIN
+       ================================================= -->
+
+  <div id="auth-section">
+
+    <!-- ================= SIGNUP ================= -->
+
+    <div>
+
+      <h3>Signup</h3>
+
+      <input
+        type="text"
+        id="signup-username"
+        placeholder="Username"
+      />
+
+      <input
+        type="password"
+        id="signup-password"
+        placeholder="Password"
+      />
+
+      <button onclick="signup()">
+        Signup
+      </button>
+
+    </div>
+
+
+    <br />
+
+
+    <!-- ================= SIGNIN ================= -->
+
+    <div>
+
+      <h3>Signin</h3>
+
+      <input
+        type="text"
+        id="signin-username"
+        placeholder="Username"
+      />
+
+      <input
+        type="password"
+        id="signin-password"
+        placeholder="Password"
+      />
+
+      <button onclick="signin()">
+        Signin
+      </button>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =================================================
+       LOGGED-IN USER SECTION
+       ================================================= -->
+
+  <div
+    id="user-section"
+    style="display: none;"
+  >
+
+    <h3>User Information</h3>
+
+    <!-- Username will be inserted here -->
+    <div id="information"></div>
+
+    <br />
+
+    <button onclick="logout()">
+      Logout
+    </button>
+
+  </div>
+
+
+</body>
+
+</html>

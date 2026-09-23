@@ -8,7 +8,7 @@ const users = [];
 
 
 app.get("/",function(re,res){
-  res.sendFile(__dirname+"/public/frontend.html");
+  res.sendFile(__dirname+"/public/frontend2.html");
 }
 )
 app.post("/signup", function (req, res) {
