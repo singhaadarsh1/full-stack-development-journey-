@@ -7,7 +7,10 @@ const JWT_SECRET="USER_APP";
 const users = [];
 
 
-
+app.get("/",function(re,res){
+  res.sendFile(__dirname+"/public/frontend.html");
+}
+)
 app.post("/signup", function (req, res) {
   const username = req.body.username;
   const password = req.body.password;
@@ -44,12 +47,21 @@ app.post("/signin", function (req, res) {
     });
   }
 });
-
-app.get("/me", (req, res) => {
-  const token = req.headers.token;
-  const userDetails = JWT.verify(token,JWT_SECRET);
-  const username=userDetails.username;
-  const user=users.find(user=>user.username===username);
+function auth(req,res,next){
+    const token=req.headers.authorization;
+    const userdetails=JWT.verify(token,JWT_SECRET);
+    if(userdetails.username){
+        req.username=userdetails.username;
+        next()
+    }else{
+        res.json({
+            message:"you are not logged in"
+        })
+    }
+}
+app.get("/me",auth, (req, res) => {
+  
+  const user=users.find(user=>user.username===req.username);
   if (user) {
     res.send({
       username: user.username,
